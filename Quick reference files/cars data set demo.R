@@ -1,5 +1,8 @@
+<<<<<<< Updated upstream
 # Packages/ Libraries in R Programming language are a set of R functions, compiled code, and sample data.
 
+=======
+>>>>>>> Stashed changes
 library("MASS")
 
 # Show first 6 rows of the cars dataset
@@ -8,7 +11,11 @@ head(Cars93)
 #Show the column names of the variables/ columns in the data
 ls(Cars93)
 
+<<<<<<< Updated upstream
 # Get one column of the data
+=======
+# Get one row of the data
+>>>>>>> Stashed changes
 Cars93$Manufacturer
 
 #We can use the table function to find the 
