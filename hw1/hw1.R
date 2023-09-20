@@ -1,0 +1,146 @@
+---
+  title: "HW 1"
+subtitle: "Data 180, Professor Kennedy"
+author: 
+  <<<<<<< Updated upstream
+name: "Tra Dinh"
+email: "dinhtr@dickinson.edu"
+=======
+  name: "Your Name"
+email: "XXXX@dickinson.edu"
+>>>>>>> Stashed changes
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+output: 
+  html_document
+---
+  Make sure that you have accepted the hw invitation link, and working with your clone repository.
+
+**Due date:** September 21 beginning of class.
+
+**Reminder:** You can insert R code in your Rmd file as a chunk in the following way:
+  ```{r}
+<<<<<<< Updated upstream
+
+=======
+  # Your code goes here
+  >>>>>>> Stashed changes
+```
+Make sure to insert a chunk for each (sub)section of the assignment.
+
+## Preliminary Task
+Go to [datacamp.com](https://datacamp.com) and complete the tutorial "Introduction to R".
+
+
+## Task 1
+a) Store the data below in a data frame object named `my_df`.
+<<<<<<< Updated upstream
+=======
+  
+  
+  >>>>>>> Stashed changes
+|Person | Preference|
+  |:------|:----------|
+  |Alice | Twitter |
+  | Bob | Facebook |
+  | Charlie | Twitter |
+  | Denise | Instagram |
+  | Erin | Facebook |
+  | Frank | Twitter |
+  | Gisele | Twitter |
+  | Harry | Instagram |
+  <<<<<<< Updated upstream
+```{r}
+my_df <- data.frame(Person = c("Alice", "Bob", "Charlie", "Denise", "Erin", "Frank", "Gisele", "Harry"), Preference = c("Twitter", "Facebook", "Twitter", "Instagram", "Facebook", "Twitter", "Twitter", "Instagram"))
+```
+b) What are the dimensions of `my_df`?
+  ```{r}
+dim(my_df)
+```
+
+c) Write R code that counts the total number of users.
+```{r}
+nrow(my_df)
+```
+d) Write R code that counts the total number of users who prefer Twitter.
+```{r}
+sum(my_df$Preference == "Twitter")
+```
+e) Write R code that returns what Gisele prefers.
+```{r}
+gisele_preference <- my_df$Preference[my_df$Person == "Gisele"]
+
+gisele_preference
+```
+## Task 2
+a) Create a vector named `my_vec` that includes all integers from 1 to 10 (inclusive).
+```{r}
+my_vec <- 1:10
+```
+b) Replace the second element in `my_vec` with the number `99`.
+```{r}
+my_vec[2] <- 99
+```
+
+c) Write a function called `my_func` that prints `This element is greater than 5!` if an element in `myvec` is greater than 5, and `This element is NOT greater than 5!` otherwise.
+```{r}
+my_func = function(num){
+  if(num>5){
+    print('This element is greater than 5!')
+  } else{
+    print('This element is NOT greater than 5!')
+  }
+}
+```
+
+## Task 3
+a. Write a function named `get_fibonacci` that returns the n'th value in the [fibonacci sequence](https://www.mathsisfun.com/numbers/fibonacci-sequence.html). For example, `get_fibonacci(5)` should return 3; `get_fibonacci(7)` should return 8 and so on. ***Hint:** It is possible to call the same function from inside it. E.g., you can call `get_fibonacci()` from inside `get_fibonacci()`. Like inception!*
+```{r}
+get_fibonacci = function(num){
+  
+  if(num==1){
+    return(0)
+  } 
+  
+  else if (num==2){
+    return(1)
+  } 
+  else 
+      return(get_fibonacci(num-1) + get_fibonacci(num-2))
+}
+get_fibonacci(5)
+
+```
+
+
+b. Using your function in part (a), find and return the 19th value in the fibonacci sequence.
+```{r}
+get_fibonacci(19)
+```
+=======
+
+b) What are the dimensions of `my_df`?
+
+c) Write R code that counts the total number of users.
+
+d) Write R code that counts the total number of users who prefer Twitter.
+
+e) Write R code that returns what Gisele prefers.
+
+## Task 2
+a) Create a vector named `my_vec` that includes all integers from 1 to 10 (inclusive).
+
+b) Replace the second element in `my_vec` with the number `99`.
+
+c) Write a function called `my_func` that prints `This element is greater than 5!` if an element in `myvec` is greater than 5, and `This element is NOT greater than 5!` otherwise.
+
+## Task 3
+a. Write a function named `get_fibonacci` that returns the n'th value in the [fibonacci sequence](https://www.mathsisfun.com/numbers/fibonacci-sequence.html). For example, `get_fibonacci(5)` should return 3; `get_fibonacci(7)` should return 8 and so on. ***Hint:** It is possible to call the same function from inside it. E.g., you can call `get_fibonacci()` from inside `get_fibonacci()`. Like inception!*
+  
+  b. Using your function in part (a), find and return the 19th value in the fibonacci sequence.
+
+
+>>>>>>> Stashed changes
+<br>
+  You are done! 🏁 Don't forget to `commit` and `push` your .Rmd file to your Github clone repository before the due date.
+<br>
+
