@@ -5,11 +5,7 @@ author:
   <<<<<<< Updated upstream
 name: "Tra Dinh"
 email: "dinhtr@dickinson.edu"
-=======
-  name: "Your Name"
-email: "XXXX@dickinson.edu"
->>>>>>> Stashed changes
-date: '`r format(Sys.Date(), "%B %d, %Y")`'
+date: '`r format(Sys.Date(), "09/21/2023")`'
 output: 
   html_document
 ---
@@ -118,29 +114,10 @@ get_fibonacci(19)
 ```
 =======
 
-b) What are the dimensions of `my_df`?
-
-c) Write R code that counts the total number of users.
-
-d) Write R code that counts the total number of users who prefer Twitter.
-
-e) Write R code that returns what Gisele prefers.
-
-## Task 2
-a) Create a vector named `my_vec` that includes all integers from 1 to 10 (inclusive).
-
-b) Replace the second element in `my_vec` with the number `99`.
-
-c) Write a function called `my_func` that prints `This element is greater than 5!` if an element in `myvec` is greater than 5, and `This element is NOT greater than 5!` otherwise.
-
-## Task 3
-a. Write a function named `get_fibonacci` that returns the n'th value in the [fibonacci sequence](https://www.mathsisfun.com/numbers/fibonacci-sequence.html). For example, `get_fibonacci(5)` should return 3; `get_fibonacci(7)` should return 8 and so on. ***Hint:** It is possible to call the same function from inside it. E.g., you can call `get_fibonacci()` from inside `get_fibonacci()`. Like inception!*
-  
-  b. Using your function in part (a), find and return the 19th value in the fibonacci sequence.
-
 
 >>>>>>> Stashed changes
 <br>
-  You are done! 🏁 Don't forget to `commit` and `push` your .Rmd file to your Github clone repository before the due date.
+You are done! 🏁 Don't forget to `commit` and `push` your .Rmd file to your Github clone repository before the due date.
 <br>
-
+  
+  
