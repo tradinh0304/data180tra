@@ -1,23 +1,25 @@
 ---
-title: "HW 1"
+  title: "HW 1"
 subtitle: "Data 180, Professor Kennedy"
 author: 
-<<<<<<< Updated upstream
-  name: "Tra Dinh"
-  email: "dinhtr@dickinson.edu"
-  date: '`r format(Sys.Date(), "09/21/2023")`'
-  output: 
+  <<<<<<< Updated upstream
+name: "Tra Dinh"
+email: "dinhtr@dickinson.edu"
+date: '`r format(Sys.Date(), "09/21/2023")`'
+output: 
   html_document
 ---
-
-Good job Dinh. 20/20.
+  Make sure that you have accepted the hw invitation link, and working with your clone repository.
 
 **Due date:** September 21 beginning of class.
 
 **Reminder:** You can insert R code in your Rmd file as a chunk in the following way:
-```{r}
-# Your code goes here
+  ```{r}
+<<<<<<< Updated upstream
 
+=======
+  # Your code goes here
+  >>>>>>> Stashed changes
 ```
 Make sure to insert a chunk for each (sub)section of the assignment.
 
@@ -28,23 +30,26 @@ Go to [datacamp.com](https://datacamp.com) and complete the tutorial "Introducti
 ## Task 1
 a) Store the data below in a data frame object named `my_df`.
 <<<<<<< Updated upstream
-
+=======
+  
+  
+  >>>>>>> Stashed changes
 |Person | Preference|
-|:------|:----------|
-|Alice | Twitter |
-| Bob | Facebook |
-| Charlie | Twitter |
-| Denise | Instagram |
-| Erin | Facebook |
-| Frank | Twitter |
-| Gisele | Twitter |
-| Harry | Instagram |
-
+  |:------|:----------|
+  |Alice | Twitter |
+  | Bob | Facebook |
+  | Charlie | Twitter |
+  | Denise | Instagram |
+  | Erin | Facebook |
+  | Frank | Twitter |
+  | Gisele | Twitter |
+  | Harry | Instagram |
+  <<<<<<< Updated upstream
 ```{r}
 my_df <- data.frame(Person = c("Alice", "Bob", "Charlie", "Denise", "Erin", "Frank", "Gisele", "Harry"), Preference = c("Twitter", "Facebook", "Twitter", "Instagram", "Facebook", "Twitter", "Twitter", "Instagram"))
 ```
 b) What are the dimensions of `my_df`?
-```{r}
+  ```{r}
 dim(my_df)
 ```
 
@@ -114,4 +119,5 @@ get_fibonacci(19)
 <br>
 You are done! 🏁 Don't forget to `commit` and `push` your .Rmd file to your Github clone repository before the due date.
 <br>
-
+  
+  
