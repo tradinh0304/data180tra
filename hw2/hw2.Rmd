@@ -8,7 +8,7 @@ date: '`r format(Sys.Date(), "09/23/2023")`' # no need to change date since this
 output: 
   html_document
 ---
-
+20/20. Good job. 
 Make sure that you have accepted the hw invitation link, and working with your clone repository.
 
 **Due date:** September 28 beginning of class.
