@@ -1,0 +1,152 @@
+---
+title: "TraDinh"
+output: html_document
+date: "2023-12-16"
+---
+
+```{r}
+loans<-read.csv("/Users/dinhphuongtra/Desktop/data180tra/data180tra/loan_default_data_set.csv",header=T)
+loans
+```
+
+1. 
+a.	What is the dimension (shape) of the dataset?  How many rows and columns does the data set have?
+```{r}
+dimension<-dim(loans)
+dimension #The dimension of this dataset is df [20,000 × 21]
+
+num_rows <- nrow(loans)
+num_rows #There are 20000 rows
+num_colums <- ncol(loans)
+num_colums #There are 21 columns
+```
+b. Report the column names of the data set.
+```{r}
+column_names <- colnames(loans)
+column_names
+```
+c. Which types of data are there in the dataset? Numeric, categorical, ordinal?
+
+```{r}
+str(loans)
+#Including interger, numeric, and also characters.
+```
+d.	Which columns contain missing values and how much (what percent) of those columns are missing?
+```{r}
+numNA <- colSums(is.na(loans))
+numNA
+missVa <- subset(numNA, numNA>0)
+missVa
+colNa <- ((missVa/nrow(loans))*100)
+colNa
+```
+
+e.	How do you think we should deal with missing values? 
+
+For columns contain missing values, we should drop it. We can substitute values in colums or rows. There are't best way to approach it but it depends on what to do with yours dataset
+
+
+f.	With this data, would you fit a supervised or an unsupervised learning model? Why?
+
+This is supervised learning cause they use data to predict what people can get loans or not.The objective of supervised learning is to how to relate the target labels to the input features so that it can correctly classify or predict new, unobserved data.
+
+
+g.	For part 2 and 3 drop all rows of the data that contain missing values. Print the dimensions of the resulting data set that has no missing values
+```{r}
+library(tidyr)
+dropVal <- drop_na(loans)
+dropVal
+dimensonDropVal <- dim(dropVal)
+dimensonDropVal
+```
+2.	Data summary statistics:
+a.	Find the summary statistics of the data set. You can use the summary function from dplyr. 
+```{r}
+install.packages("dplyr")
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+summary_statistics <-summary(dropVal)
+summary_statistics 
+```
+
+b.	Based on the mean, mode, and median, is “num_card_inq_24_month” bell shaped, left, right skewed? How about “tot_amount_currently_past_due”? “credit_age”? 
+- num_card_inq_24_month is right-skewed
+- tot_amount_currently_past_due is right-skewed
+- credit_age is bell-shaped, slightly left-skewed
+
+c.	Plot a histogram of the variables in b above. Do the shapes of the histograms confirm the skewness you found in b?
+Yes it confirm the skewness you found in b. 
+
+```{r}
+
+ggplot(dropVal, aes(x = credit_age)) +
+  geom_histogram(binwidth = 30, fill = "skyblue", alpha = 0.7) +
+  labs(title = "Ages in months of first credit product obtained by the applicant", x = "Credit Age", y = "Frequency") +
+  theme_minimal()
+
+ggplot(dropVal, aes(x = num_card_inq_24_month)) +
+  geom_histogram(binwidth = 1, fill = "purple", alpha = 0.7) +
+  labs(title = "Numbers of credit card inquiries in last 24 months", x = "num_card_inq_24_monthe", y = "Frequency") +
+  theme_minimal()
+
+ggplot(dropVal, aes(x = tot_amount_currently_past_due)) +
+  geom_histogram( fill = "orange", alpha = 0.7) +
+  labs(title = "Total amount past due currently for all credit accounts", x = "num_card_inq_24_monthe", y = "Frequency") +
+  theme_minimal()
+
+```
+
+d.	How would your convert the “rep_education” column into numerical data? Name two ways. 
+"We can use as.numeric() and transform() funtion to convert"
+
+
+3.	Data Visualization:
+For every graph in this section, remember to label your axes and to include a title. Feel free to play around with graphics and parameters. Have fun and explore!
+
+a.	Plot a bar graph for the “Def_Ind” column and describe it.
+There is a significant gap between defaulted accounts and accounts that are not defaulted. The number of accounts that are not defaulted is much higher than the number of defaulted accounts.
+```{r}
+ggplot(dropVal, aes(x = Def_ind)) +
+  geom_bar(fill = "skyblue") +
+  labs(title = "Distribution of Default Indicator", x = "Default Indicator", y = "Accounts")
+```
+
+b.	Plot a bar graph for the “rep_education" column and describe it. 
+The 'College' column has the highest value, followed by 'High School,' then 'Graduate,' and finally, 'Others'. 'College reached the highest value around 10000.
+```{r}
+ggplot(dropVal, aes(x = rep_education)) +
+  geom_bar(fill = "orange") +
+  labs(title = "Education Level", x = "Levels", y = "Number of degrees")
+```
+
+c.	Plot a histogram of the “rep_income” variable.
+The histogram is in bell-shaped. 
+```{r}
+ggplot(dropVal, aes(x = rep_income )) +
+  geom_histogram( fill = "orange", alpha = 0.7) +
+  labs(title = "Annual income", x = "Income", y = "Number of people") +
+  theme_minimal()
+```
+
+d.	Plot a boxplot of the “tot_balance” variable. Using the box plot report the five number summary of the variable? Are there any outliers for this variable? 
+
+```{r}
+sum <- summary(dropVal,tot_balance)
+sum
+
+ggplot(dropVal, aes(x = tot_balance)) + 
+  geom_boxplot(fill = "slateblue", alpha = 0.2) + 
+  xlab("Total available balance") + 
+  ggtitle("Total available balance for all credit products")
+
+
+outliers <- boxplot.stats(dropVal$tot_balance)$out
+outliers
+```
+
+
+
+
