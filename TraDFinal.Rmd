@@ -4,8 +4,12 @@ output: html_document
 date: "2023-12-16"
 ---
 
+34/40. 
 ```{r}
-loans<-read.csv("/Users/dinhphuongtra/Desktop/data180tra/data180tra/loan_default_data_set.csv",header=T)
+#install.packages("cli")
+```
+```{r}
+loans<-read.csv("C:/Users/rodge/OneDrive/Desktop/DATA 180 -Intoduction to Data Science/DATA-180-Introduction-to-Data-Science--Section-2/data/loan_default_data_set.csv",header=T)
 loans
 ```
 
@@ -44,6 +48,8 @@ colNa
 e.	How do you think we should deal with missing values? 
 
 For columns contain missing values, we should drop it. We can substitute values in colums or rows. There are't best way to approach it but it depends on what to do with yours dataset
+
+# You cannot drop a whole column even when it has missing values. Dealing with mising values should always be row wise. 
 
 
 f.	With this data, would you fit a supervised or an unsupervised learning model? Why?
@@ -102,6 +108,8 @@ ggplot(dropVal, aes(x = tot_amount_currently_past_due)) +
 d.	How would your convert the “rep_education” column into numerical data? Name two ways. 
 "We can use as.numeric() and transform() funtion to convert"
 
+# What would you convert the column to? (-4)
+
 
 3.	Data Visualization:
 For every graph in this section, remember to label your axes and to include a title. Feel free to play around with graphics and parameters. Have fun and explore!
@@ -131,7 +139,7 @@ ggplot(dropVal, aes(x = rep_income )) +
   theme_minimal()
 ```
 
-d.	Plot a boxplot of the “tot_balance” variable. Using the box plot report the five number summary of the variable? Are there any outliers for this variable? 
+d.	Plot a boxplot of the “tot_balance” variable. Using the box plot report the five number summary of the variable? Are there any outliers for this variable? (-2)
 
 ```{r}
 sum <- summary(dropVal,tot_balance)
